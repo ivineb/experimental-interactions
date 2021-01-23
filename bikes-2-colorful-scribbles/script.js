@@ -53,8 +53,8 @@ function draw() {
   text('Bikes are for', 200, 150);
   textSize(24);
   fill('pink')
-  text('Left-click to see who else bikes are for!', 200, 240);
-  text('Click and drag to change BG color', 200, 275);
+  text('Left-click to see who else bikes are for!', 200, 265);
+  text('Click and drag to change BG color', 200, 295);
   textSize(16);
   text('Press any key to save the artwork', 1600, 800);
 
@@ -80,7 +80,7 @@ function mousePressed() {
   // its been tricky because i needed the bg to stay in setup() so that it doesnt fill the
   // screen everytime the draw() is executed so that we can see the cool paint on the screen
   fill("fff");
-  rect(100, 100, 560, 200)
+  rect(100, 100, 560, 120)
 
   // randomizing words when we click 
   index = floor(random(words.length));
