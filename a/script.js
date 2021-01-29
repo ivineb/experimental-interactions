@@ -65,7 +65,7 @@ function scribble() {
 	x += vx;
 	y += vy;
 	
-	// wrap
+	// wrapping the ellipse whenever it touches the corners
 	if (x < 0) {
 		x = width;
 	}
@@ -79,7 +79,7 @@ function scribble() {
 		y = 0;
 	}
 	
-	// draw 
+	// coloring n drawing that ellipse
   red += random(-8, 8);
 	red = constrain(red, 60, 255);
 	fill(red, 90, 315 - red);
@@ -119,7 +119,7 @@ function drawText() {
   // background typo pattern
 
   function pattern() {
-    var w = 55; // width of one cell
+    var w = 55; // width of one cell, go up to have less words
     var h = w; // height of one cell
 
 	for (let x = 0; x <= width; x += w) {
@@ -127,7 +127,7 @@ function drawText() {
 			push();
 			translate(x, y);
 
-			var r = random(0, 255); // red
+			var r = random(0, 255); 
 			var g = random(0, 255);
 			var b = random(0, 250);
 
@@ -172,7 +172,7 @@ function keyPressed() {
  rect(420, 330, 1060, 150);
  
  index = floor(random(words.length));
- if (index == words.length) {
+ if (index === words.length) {
    index = 0;
  }
 }

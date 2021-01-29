@@ -39,6 +39,7 @@ var range = maxSpeed * 0.33;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
+  // more bike path stuff
   dx = width / 2;
 	dy = height / 2;
 	xSpeed = random(-2,2);
@@ -46,11 +47,9 @@ function setup() {
   noStroke();
   // applying that typo bg pattern 
   pattern();
-  // img = loadImage('bike.png'); 
 }
 
 function draw() {
-  // image(img, 0, height / 8, img.width / 6, img.height / 6);
   drawText();
   scribble();
 }
@@ -117,15 +116,16 @@ function drawText() {
   // background typo pattern
 
 function pattern() {
-    var w = 55; // width of one cell
+    var w = 55; // width of one cell / (go up to have less words) 
     var h = w; // height of one cell
 
-	for (let x = 0; x <= width; x += w) {
+	for (let x = 0; x <= width; x += w) {  // letting the words fill the width and height of the page
   for (let y = 0; y <= height; y += h) {
     
     push();
     translate(x, y);
 
+    // random colors 
     var r = random(0, 255); 
     var g = random(0, 255);
     var b = random(0, 250);
@@ -164,7 +164,7 @@ function pattern() {
 // when we press the up arrow, the word changes and we get a random light colored rect each time behind text
 
 function keyPressed() {
-    var r = random(200, 255); // red
+    var r = random(200, 255); 
     var g = random(200, 255);
     var b = random(0, 250);
 
@@ -175,7 +175,7 @@ function keyPressed() {
  
  // random word here
   index = floor(random(words.length));
-  if (index == words.length) {
+  if (index === words.length) {
     index = 0;
   }
   }
