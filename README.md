@@ -1,2 +1,2 @@
 # experimental-interactions
- Projects for the MCAD Experimental Interations class.
+ Projects for the MCAD Experimental Interactions class.
