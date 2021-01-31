@@ -86,7 +86,7 @@ function draw() {
   button = createButton("Click me to find out");
   button.addClass("button");
   button.position(750, 550);
-  button.style("background-color", "#1687a7");
+  button.style("background-color", "rgb(22,105,197)");
   button.mousePressed(doSomething);
    scribble();
 }
