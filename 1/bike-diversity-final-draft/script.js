@@ -48,7 +48,7 @@ function setup() {
   textFont("ohno-blazeface");
   fill("#005086");
   textSize(106);
-  textStyle(ITALIC);
+  textStyle(NORMAL);
   text("bikes are for..", 570, 320);
 }
 
