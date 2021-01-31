@@ -56,7 +56,7 @@ function setup() {
   fill("#005086");
   textSize(95);
   textStyle(NORMAL);
-  text("bikes are for..", 600, 310);
+  text("bikes are for..", 590, 310);
 }
 
 // noise
