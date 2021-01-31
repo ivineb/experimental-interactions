@@ -1,3 +1,10 @@
+// reference for randomizing words
+// https://editor.p5js.org/awade5/sketches/BJHlo64z4
+
+// reference for gradient/noise bg
+// https://stackoverflow.com/questions/61565188/noisy-gradient-in-p5-js
+
+
 var index = 0;
 
 var button;
@@ -32,7 +39,7 @@ var range = maxSpeed * 0.33;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background("lightyellow");
+  background(255);
   setGradient(0, 0, width, height, color(255, 110, 140), color(5, 185, 250));
   setNoise();
 
@@ -91,11 +98,13 @@ function draw() {
    scribble();
 }
 
+
 // creating a function for the button
 function doSomething() {
-  var r = random(200, 255);
-  var g = random(200, 255);
-  var b = random(0, 250);
+  // text bg
+  var r = random(0, 255);
+  var g = random(250, 255);
+  var b = random(255, 255);
   fill(r, g, b);
   rect(420, 330, 1060, 150);
 
