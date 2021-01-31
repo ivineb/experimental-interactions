@@ -49,16 +49,14 @@ function setup() {
   xSpeed = random(-2, 2);
   ySpeed = random(-2, 2);
   noStroke();
-  
-  // applying that typo bg pattern
   pattern();
   
   // bikes are for
   textFont("ohno-blazeface");
   fill("#005086");
-  textSize(106);
+  textSize(95);
   textStyle(NORMAL);
-  text("bikes are for..", 570, 320);
+  text("bikes are for..", 600, 310);
 }
 
 // noise
@@ -92,7 +90,7 @@ function setGradient(x, y, w, h, c1, c2) {
 function draw() {
   button = createButton("Click me to find out");
   button.addClass("button");
-  button.position(750, 550);
+  button.position(844, 550);
   button.style("background-color", "rgb(22,105,197)");
   button.mousePressed(doSomething);
    scribble();
@@ -106,14 +104,14 @@ function doSomething() {
   var g = random(250, 255);
   var b = random(255, 255);
   fill(r, g, b);
-  rect(420, 330, 1060, 150);
+  rect(420, 330, 1095, 150);
 
   textFont("ohno-blazeface");
   fill("#005086");
   noStroke();
   textSize(136);
   textStyle(NORMAL);
-  text(words[index], 450, 440);
+  text(words[index], 480, 440);
 
   index = floor(random(words.length));
   if (index === words.length) {
@@ -156,7 +154,7 @@ function scribble() {
 // background typo pattern
 
 function pattern() {
-  var w = 77; // width of one cell / (go up to have less words)
+  var w = 100; // width of one cell / (go up to have less words)
   var h = w; // height of one cell
 
   for (let x = 0; x <= width; x += w) {
@@ -170,7 +168,7 @@ function pattern() {
       var g = random(0, 10);
       var b = random(0, 250);
 
-      fill(r, g, b);
+      fill(r, g, b, 160);
 
       var randomChoice = random(10);
       if (randomChoice < 1) {
