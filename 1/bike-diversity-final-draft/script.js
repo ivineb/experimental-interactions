@@ -96,7 +96,6 @@ function draw() {
    scribble();
 }
 
-
 // creating a function for the button
 function doSomething() {
   // text bg
