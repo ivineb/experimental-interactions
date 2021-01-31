@@ -33,6 +33,8 @@ var range = maxSpeed * 0.33;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background("lightyellow");
+  setGradient(0, 0, width, height, color(255, 110, 140), color(5, 185, 250));
+  setNoise();
 
   // more bike path stuff
   dx = width / 2;
@@ -52,11 +54,39 @@ function setup() {
   text("bikes are for..", 570, 320);
 }
 
+// noise
+function setNoise() {
+  loadPixels();
+  for (let x = 0; x < width; x++ ) {
+      for (let y = 0; y < height; y++ ) {
+          if (random(1) > 0.9) {
+              const index = (x + y * width) * 4;
+              pixels[index] = 255;
+              pixels[index + 100] = 255;
+              pixels[index + 100] = 255;
+              pixels[index + 100] = 255;
+          }
+      }
+  }
+  updatePixels();
+}
+
+// gradient
+function setGradient(x, y, w, h, c1, c2) {
+  noFill();
+  for (let i = y; i <= y + h; i++) {
+      let inter = map(i, y, y + h, 0, 1);
+      let c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(x, i, x + w, i);
+  }
+}
+
 function draw() {
   button = createButton("Click me to find out");
   button.addClass("button");
   button.position(750, 550);
-  button.style("background-color", "#00b7c2");
+  button.style("background-color", "#1687a7");
   button.mousePressed(doSomething);
    scribble();
 }
@@ -127,9 +157,9 @@ function pattern() {
       translate(x, y);
 
       // random colors
-      var r = random(0, 5);
-      var g = random(0, 255);
-      var b = random(0, 150);
+      var r = random(0, 150);
+      var g = random(0, 10);
+      var b = random(0, 250);
 
       fill(r, g, b);
 
