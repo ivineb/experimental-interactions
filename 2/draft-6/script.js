@@ -1,5 +1,8 @@
-  // rainbow gradient
-  //https://openprocessing.org/sketch/47123
+// rainbow gradient
+//https://openprocessing.org/sketch/47123
+
+// graphs inspiration
+//https://editor.p5js.org/philchewy/sketches/h-qyvyKea
 
 
   //var of button
@@ -176,24 +179,24 @@ function tv() {
       fill('#0A3F3C');
       ellipse(1265, 385, 30, 30);
 
-      fill('#00454a');
+      fill('#222831');
       rect(525, 150, 645, 550, 5);
       
       textStyle(ITALIC);
       textSize(20);
       fill('cyan');
-      text('You must be dying to know of the top 5', 600, 230);
+      text('Hi again! Below you will find the top 5', 600, 230);
       text('great diverse shows that made it to my list. ', 600, 260);
-      text('They all include LGBTQIA+, Women, and BIPOC. ', 600, 290);
+      text('They all include LGBTQIA+, Women, and BIPOC: ', 600, 290);
     
       
       textStyle(NORMAL);
       fill('#eee');
-      text('- Killing Eve', 600, 395);
-      text('- Sex Education', 600, 425);
-      text('- Atypical', 600, 455);
-      text('- The OA', 600, 485);
-      text('- Mr. Robot', 600, 515);
+      text('1- Killing Eve', 600, 385);
+      text('2- Sex Education', 600, 415);
+      text('3- Atypical', 600, 445);
+      text('4- The OA', 600, 475);
+      text('5- Mr. Robot', 600, 505);
 
       fill('#f8a1d1');
       textSize(15);
@@ -203,9 +206,9 @@ function tv() {
 
       //lil rainbow gradient
       noFill();
-      strokeWeight(8);
+      strokeWeight(10);
       stroke(redValue, greenValue, blueValue);
-      rect(528, 150, 648, 557, 3);
+      rect(528, 150, 647, 556, 3);
  
      
     } else {
@@ -258,7 +261,7 @@ function characters() {
     noStroke();
     textSize(14);
     fill('white');
-    text(shows[i],570,550+(i*50)*-1); 
+    text(shows[i],570,550+(i*33)*-1); 
     
     //yes bar
     fill('#e36bae');
@@ -294,7 +297,7 @@ function characters() {
   // textFont("p22-underground");
   textSize(22);
   textStyle(BOLD);
-  text("Inclusivity of folks as main characters:", 630,230);
+  text("Inclusivity of folks as main characters:", 600,230);
   
   textSize(12);
   textStyle(NORMAL);
@@ -331,7 +334,7 @@ function createdBy() {
   textSize(22);
   fill('cyan');
   textStyle(BOLD);
-  text(graph1.name, 610, 230);
+  text(graph1.name, 600, 230);
   fill('white');
   textStyle(NORMAL);
   textSize(18);
