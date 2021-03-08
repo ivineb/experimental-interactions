@@ -1,0 +1,25 @@
+html,
+body {
+margin: 0;
+padding: 0;
+font-family: p22-underground, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: p22-underground-pc, sans-serif;
+font-weight: 500;
+font-style: normal;
+
+font-family: ballinger-mono, sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+.button {
+	border-radius:40px;
+	border: none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:bold;
+	padding:32px 32px;
+}
