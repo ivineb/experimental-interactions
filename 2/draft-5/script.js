@@ -1,61 +1,22 @@
-// rainbow gradient
-//https://openprocessing.org/sketch/47123
-
-// graphs inspiration
-//https://editor.p5js.org/philchewy/sketches/h-qyvyKea
-
-
+  
   //var of button
   var d = 95;
   var state = false;
   var state2 = false;
-  var state3 = false;
-
-  var redValue = 255;
-  var blueValue = 0;
-  var greenValue = 0;
+  
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
    background('#fb743e');
-   // applying bg gradient + noise effect
+   // applying bg gradient + nose effect
    setGradient(0, 0, width, height, color(200, 200, 240), color(12, 240, 230));
    setNoise();
+
 }
 
 function draw() {
   //displaying the tv
   tv();
-
-  //rainbow gradient
-  if( greenValue<255 && redValue==255 && blueValue==0){
-    greenValue++;
-   }
-   
-   //go from yellow to pure green
-   if(greenValue == 255 && redValue>0){
-    redValue--; 
-   }
-   
-   //go from green to cyan/bluish-green
-   if(redValue==0 && greenValue==255 && blueValue<255){
-   
-     blueValue++;
-   }
-   
-   //go from bluish-green to blue
-   if(blueValue==255 && greenValue>0){
-    greenValue--; 
-   }
-  // go from blue to violet
-   if(redValue < 255 && greenValue==0 && blueValue==255){
-     redValue++;
-     
-   }
-   //go from violet to red
- if(redValue == 255 && blueValue>0){
-   blueValue--;
- }
 }
 
 function tv() {
@@ -84,18 +45,7 @@ function tv() {
   rect(1225, 300, 85, 4, 5);
   rect(1225, 320, 85, 4, 5);
   rect(1225, 340, 85, 4, 5);
-  // rect(1225, 360, 85, 4, 5);
-
-  // tv top button
-  fill('#025955');
-  ellipse(1265, 385, d/2, d/2);
-
-  // outline
-  fill('#8b5e83');
-  ellipse(1265, 385, 30, 30);
-
-  ///////////////
-
+  rect(1225, 360, 85, 4, 5);
 
   // tv button1
   fill('#8b5e83');
@@ -104,8 +54,6 @@ function tv() {
   // outline
   fill('#fdf1d6');
   ellipse(1265, 480, 60, 60);
-
-  /////////////////
 
   // tv button2
   fill('#8b5e83');
@@ -151,10 +99,8 @@ function tv() {
   textStyle(NORMAL);
   textSize(20);
   text('Hello there, ', 600, 465);
-  text('Press TV buttons to change the channels,', 600, 505);
-  text('then press again to turn off.', 600, 535);
-  fill('pink');
-  text('BONUS: Press tiny top button at the end.', 600, 565);
+  text('Press TV button to change the channels,', 600, 505);
+  text('then press it again to turn it off.', 600, 535);
 
   // text border
   noFill();
@@ -172,48 +118,7 @@ function tv() {
       ellipse(1265, 620, 60, 60);
       characters();
     } 
-
-     // screen top button (bonus)
-     if (state3) {
-      noStroke();
-      fill('#0A3F3C');
-      ellipse(1265, 385, 30, 30);
-
-      fill('#222831');
-      rect(525, 150, 645, 550, 5);
-      
-      textStyle(ITALIC);
-      textSize(20);
-      fill('cyan');
-      text('Hi again! Below you will find the top 5', 600, 230);
-      text('great diverse shows that made it to my list. ', 600, 260);
-      text('They all include LGBTQIA+, Women, and BIPOC: ', 600, 290);
     
-      
-      textStyle(NORMAL);
-      fill('#eee');
-      text('1- Killing Eve', 600, 385);
-      text('2- Sex Education', 600, 415);
-      text('3- Atypical', 600, 445);
-      text('4- The OA', 600, 475);
-      text('5- Mr. Robot', 600, 505);
-
-      fill('#f8a1d1');
-      textSize(15);
-
-      text('I challenge you to analyze your watching habits.', 600, 605);
-      text('Have you been watching diverse TV shows?', 600, 630);
-
-      //lil rainbow gradient
-      noFill();
-      strokeWeight(10);
-      stroke(redValue, greenValue, blueValue);
-      rect(528, 150, 647, 556, 3);
- 
-     
-    } else {
-
-    }
 }
 
 // button function
@@ -224,12 +129,9 @@ function mousePressed() {
   if (dist(mouseX, mouseY, 1265, 620) < d/2) {
     state2 = !state2;
   }
-  if (dist(mouseX, mouseY, 1265, 385) < d/2) {  
-    state3 = !state3;
-  }
 }
 
-/// second graph
+/// second graph below
 
 function characters() {
 
@@ -261,7 +163,7 @@ function characters() {
     noStroke();
     textSize(14);
     fill('white');
-    text(shows[i],570,550+(i*33)*-1); 
+    text(shows[i],570,550+(i*50)*-1); 
     
     //yes bar
     fill('#e36bae');
@@ -294,10 +196,10 @@ function characters() {
   
   fill("cyan");
   noStroke();
-  // textFont("p22-underground");
-  textSize(22);
+  textFont("p22-underground");
+  textSize(26);
   textStyle(BOLD);
-  text("Inclusivity of folks as main characters:", 600,230);
+  text("Inclusivity of folks as main characters:", 630,230);
   
   textSize(12);
   textStyle(NORMAL);
@@ -330,11 +232,11 @@ function createdBy() {
     ]
   }
 
-  // textFont("p22-underground");
-  textSize(22);
+  textFont("p22-underground");
+  textSize(26);
   fill('cyan');
   textStyle(BOLD);
-  text(graph1.name, 600, 230);
+  text(graph1.name, 610, 230);
   fill('white');
   textStyle(NORMAL);
   textSize(18);
